@@ -15,7 +15,7 @@ import { contactRoutes } from "./api/contact/router";
     await connectDB();
 
     const server = Hapi.server({
-    port: Number(process.env.PORT) || 5000,
+   port: Number(process.env.PORT) || 5000,
     host: process.env.HOST || "0.0.0.0",
     routes: {
       cors: {
@@ -28,7 +28,8 @@ import { contactRoutes } from "./api/contact/router";
         relativeTo: path.join(process.cwd(), "uploads"),
       },
     },
-  });
+  
+});
 
 
     // ✅ register inert (IMPORTANT)
@@ -47,11 +48,10 @@ import { contactRoutes } from "./api/contact/router";
     });
 
     // ✅ API routes
-    issueRoutes(server);
-  server.route(announcementRoutes);
-  authRoutes(server);
-server.route(contactRoutes);
-
+ issueRoutes(server);        // function that takes server ✅
+announcementRoutes(server); // if function ✅
+authRoutes(server);         // if function ✅
+contactRoutes(server);      // if function ✅
     await server.start();
     console.log("Server running on", server.info.uri);
   };
