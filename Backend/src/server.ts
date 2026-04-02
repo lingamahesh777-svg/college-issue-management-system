@@ -47,6 +47,16 @@ import { contactRoutes } from "./api/contact/router";
       },
     });
 
+    // ✅ root route
+    server.route({
+      method: "GET",
+      path: "/",
+      handler: () => ({
+        status: "ok",
+        message: "Issue Management API is running",
+      }),
+    });
+
     // ✅ API routes
  issueRoutes(server);        // function that takes server ✅
 announcementRoutes(server); // if function ✅
