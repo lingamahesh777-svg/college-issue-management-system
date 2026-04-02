@@ -20,7 +20,9 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   },
-  "scripts": {
-    "dev": "nodemon --watch src --exec ts-node src/server.ts"
-  }
+ "scripts": {
+  "dev": "nodemon --watch src --exec ts-node src/server.ts",
+  "build": "tsc",
+  "start": "node dist/server.js"
+}
 }
