@@ -15,20 +15,20 @@ import { contactRoutes } from "./api/contact/router";
     await connectDB();
 
     const server = Hapi.server({
-  port: 5000,
-  host: "localhost",
-  routes: {
-    cors: {
-      origin: ["http://localhost:5173"],
-      credentials: true,
-      headers: ["Accept", "Content-Type", "Authorization"],
-      additionalHeaders: ["X-Requested-With"],
+    port: Number(process.env.PORT) || 5000,
+    host: process.env.HOST || "0.0.0.0",
+    routes: {
+      cors: {
+        origin: ["http://localhost:5173"],
+        credentials: true,
+        headers: ["Accept", "Content-Type", "Authorization"],
+        additionalHeaders: ["X-Requested-With"],
+      },
+      files: {
+        relativeTo: path.join(process.cwd(), "uploads"),
+      },
     },
-    files: {
-      relativeTo: path.join(process.cwd(), "uploads"),
-    },
-  },
-});
+  });
 
 
     // ✅ register inert (IMPORTANT)
