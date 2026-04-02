@@ -14,12 +14,12 @@ import { contactRoutes } from "./api/contact/router";
     // ✅ connect DB
     await connectDB();
 
-   const server = Hapi.server({
-  port: process.env.PORT || 5000,
-  host: "0.0.0.0",
+    const server = Hapi.server({
+  port: 5000,
+  host: "localhost",
   routes: {
     cors: {
-      origin: ["*"],
+      origin: ["http://localhost:5173"],
       credentials: true,
       headers: ["Accept", "Content-Type", "Authorization"],
       additionalHeaders: ["X-Requested-With"],
