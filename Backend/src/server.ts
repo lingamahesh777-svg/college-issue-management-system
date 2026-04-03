@@ -18,9 +18,9 @@ import { contactRoutes } from "./api/contact/router";
    port: Number(process.env.PORT) || 5000,
     host: process.env.HOST || "0.0.0.0",
     routes: {
-      cors: {
-        origin: ["http://localhost:5173"],
-        credentials: true,
+     cors: {
+  origin: ["https://college-issue-management-system.vercel.app"],
+  credentials: true,
         headers: ["Accept", "Content-Type", "Authorization"],
         additionalHeaders: ["X-Requested-With"],
       },
