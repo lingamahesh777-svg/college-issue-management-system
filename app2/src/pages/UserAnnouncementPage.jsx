@@ -6,7 +6,7 @@ const UserAnnouncementPage = () => {
   const [user, setUser] = useState("");
   const [comment, setComment] = useState("");
 
-  const API = "http://localhost:5000";
+  const API = "https://college-issue-management-system.onrender.com";
 
   const fetchPosts = async () => {
     try {

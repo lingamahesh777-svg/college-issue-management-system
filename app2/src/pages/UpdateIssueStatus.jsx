@@ -88,7 +88,7 @@ return (
 
             {issue.image && (
               <img
-                src={`http://localhost:5000/uploads/${issue.image}`}
+                src={`https://college-issue-management-system.onrender.com/uploads/${issue.image}`}
                 alt="issue"
                 className="w-28 h-28 object-cover rounded-lg border"
               />

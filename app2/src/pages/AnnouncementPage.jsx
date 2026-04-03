@@ -9,7 +9,7 @@ const AnnouncementPage = () => {
   const [comment, setComment] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const API = "http://localhost:5000";
+  const API = "https://college-issue-management-system.onrender.com";
 
   const fetchPosts = async () => {
     try {
