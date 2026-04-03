@@ -135,7 +135,7 @@ const AnnouncementPage = () => {
 
               {/* Comments */}
               <div className="space-y-2">
-                {post.comments.map((c, index) => (
+                {post.comments && post.comments.map((c, index) => (
                   <div
                     key={index}
                     className="bg-gray-100 px-3 py-2 rounded-lg text-sm"
