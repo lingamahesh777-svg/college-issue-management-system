@@ -15,21 +15,24 @@ import { contactRoutes } from "./api/contact/router";
     await connectDB();
 
     const server = Hapi.server({
-   port: Number(process.env.PORT) || 5000,
-    host: process.env.HOST || "0.0.0.0",
-    routes: {
-     cors: {
-  origin: ["https://college-issue-management-system.vercel.app"],
-  credentials: true,
-        headers: ["Accept", "Content-Type", "Authorization"],
-        additionalHeaders: ["X-Requested-With"],
+      port: Number(process.env.PORT) || 5000,
+      host: process.env.HOST || "0.0.0.0",
+      routes: {
+        cors: {
+          origin: [
+            "https://college-issue-management-system.vercel.app",
+            "http://localhost:3000",
+            "http://127.0.0.1:3000",
+          ],
+          credentials: true,
+          headers: ["Accept", "Content-Type", "Authorization"],
+          additionalHeaders: ["X-Requested-With"],
+        },
+        files: {
+          relativeTo: path.join(process.cwd(), "uploads"),
+        },
       },
-      files: {
-        relativeTo: path.join(process.cwd(), "uploads"),
-      },
-    },
-  
-});
+    });
 
 
     // ✅ register inert (IMPORTANT)
